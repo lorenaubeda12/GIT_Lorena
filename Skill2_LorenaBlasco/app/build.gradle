@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.svalero.skill2_lorenablasco'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.svalero.skill2_lorenablasco"
