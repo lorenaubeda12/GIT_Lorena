@@ -2,7 +2,7 @@ package com.svalero.mvp_netflix_01.contract;
 
 public interface LoginContract {
 
-    
+
     public interface View {
         void successLogin(User user, String message);
 
@@ -15,9 +15,9 @@ public interface LoginContract {
 
     public interface Model {
         interface OnLoginUserListener {
-            onFinished(User user);
+            void onFinished(User user);
 
-            onFailure(String err);
+            void onFailure(String err);
         }
 
         void findUserWS(User user, OnLoginUserListener onLoginUserListener);
