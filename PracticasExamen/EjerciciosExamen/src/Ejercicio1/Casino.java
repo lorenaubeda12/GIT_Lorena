@@ -1,4 +1,4 @@
-package Thread;
+package Ejercicio1;
 
 import java.util.ArrayList;
 import java.util.Random;
