@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Skill4_LorenaBlasco</string>
+    <string name="titulo">Bienvenido al ejemplo!</string>
+    <string name="ingresar">Ingresar Nombre</string>
+    <string name="Enviar">Enviar</string>
+    <string name="Bienvenido">Hola bienvenido,  </string>
+    <string name="mensaje">Selección: </string>
 </resources>
