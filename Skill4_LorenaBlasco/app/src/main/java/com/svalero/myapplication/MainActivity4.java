@@ -56,7 +56,7 @@ public class MainActivity4 extends AppCompatActivity {
         });*/
 
 
-        //Spinner relleno con arrayList
+      /*  //Spinner relleno con arrayList
         ArrayList<String> listaComboDias = new ArrayList<String>();
         listaComboDias.add("Seleccion:");
         listaComboDias.add("Lunes");
@@ -66,6 +66,8 @@ public class MainActivity4 extends AppCompatActivity {
         listaComboDias.add("Viernes");
         listaComboDias.add("Sábado");
         listaComboDias.add("Domingo");
+
+
 
         //Traer datos del arrayList de arriba contiene los valores que iran dentro del spinner(primero nuesta posicion, lo que vamos a rellenar y el array que usaremos)
         ArrayAdapter<CharSequence> adapter2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, listaComboDias);
@@ -86,9 +88,36 @@ public class MainActivity4 extends AppCompatActivity {
             }
 
 
+        });*/
+
+
+        //Spinner relleno con simulacion de db
+        ArrayList<String> comboDiasList = new ArrayList<String>();
+        comboDiasList.add("Haz tu selección:");
+        //Rellenar el array con los datos
+        for (int i = 0; i < 10; i++) {
+            comboDiasList.add("Opción " + i);
+        }
+        //Traer datos del arrayList de arriba contiene los valores que iran dentro del spinner(primero nuesta posicion, lo que vamos a rellenar y el array que usaremos)
+        ArrayAdapter<CharSequence> adapter2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, comboDiasList);
+        comboDias.setAdapter(adapter2);
+
+        //Añadir un evento al spinner para que cuando se seleccione un elemento se muestre en el TextView(ArrayList)
+        comboDias.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(parent.getContext(), "Seleccionado: " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+                String mensaje = getString(R.string.mensaje);
+                estado.setText(mensaje + parent.getItemAtPosition(position).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                estado.setText("No se ha seleccionado nada");
+            }
+
+
         });
-
-
     }
 
     public void evento(View view) {
