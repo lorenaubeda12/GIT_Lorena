@@ -1,4 +1,4 @@
-package com.svalero.mvp_simpson_01.lst_simpson.model.pojo;
+package com.svalero.mvp_simpson_01.Entity.pojo;
 
 public class Simpson {
 
