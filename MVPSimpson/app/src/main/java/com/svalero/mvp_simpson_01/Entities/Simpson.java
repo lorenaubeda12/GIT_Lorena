@@ -19,4 +19,13 @@ public class Simpson {
     @SerializedName("characterDirection")
     private String characterDirection;
 
+    @Override
+    public String toString() {
+        return "Simpson{" +
+                "quote='" + quote + '\'' +
+                ", character='" + character + '\'' +
+                ", image='" + image + '\'' +
+                ", characterDirection='" + characterDirection + '\'' +
+                '}';
+    }
 }
