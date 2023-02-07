@@ -1,4 +1,4 @@
-package com.svalero.mvp_simpson_01.Entity.pojo;
+package com.svalero.mvp_simpson_01.Entities;
 
 public class Simpson {
 

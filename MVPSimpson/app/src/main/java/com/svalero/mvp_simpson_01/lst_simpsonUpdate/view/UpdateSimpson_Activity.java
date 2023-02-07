@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.svalero.mvp_simpson_01.Entity.pojo.Simpson;
+import com.svalero.mvp_simpson_01.Entities.Simpson;
 import com.svalero.mvp_simpson_01.R;
 import com.svalero.mvp_simpson_01.lst_simpsonUpdate.UpdateSimpson_Contract;
 import com.svalero.mvp_simpson_01.lst_simpsonUpdate.presenter.UpdateSimpson_Presenter;

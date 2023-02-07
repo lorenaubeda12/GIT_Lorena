@@ -1,6 +1,6 @@
 package com.svalero.mvp_simpson_01.lst_simpsonUpdate.presenter;
 
-import com.svalero.mvp_simpson_01.Entity.pojo.Simpson;
+import com.svalero.mvp_simpson_01.Entities.Simpson;
 import com.svalero.mvp_simpson_01.lst_simpsonUpdate.Model.UpdateSimpson_Model;
 import com.svalero.mvp_simpson_01.lst_simpsonUpdate.UpdateSimpson_Contract;
 

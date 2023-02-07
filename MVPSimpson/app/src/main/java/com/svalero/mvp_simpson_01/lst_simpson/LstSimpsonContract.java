@@ -1,6 +1,6 @@
 package com.svalero.mvp_simpson_01.lst_simpson;
 
-import com.svalero.mvp_simpson_01.Entity.pojo.Simpson;
+import com.svalero.mvp_simpson_01.Entities.Simpson;
 
 import java.util.ArrayList;
 

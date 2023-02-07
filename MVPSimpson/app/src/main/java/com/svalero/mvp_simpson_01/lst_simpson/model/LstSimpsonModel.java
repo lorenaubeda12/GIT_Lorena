@@ -1,7 +1,7 @@
 package com.svalero.mvp_simpson_01.lst_simpson.model;
 
 import com.svalero.mvp_simpson_01.lst_simpson.LstSimpsonContract;
-import com.svalero.mvp_simpson_01.Entity.pojo.Simpson;
+import com.svalero.mvp_simpson_01.Entities.Simpson;
 
 public class LstSimpsonModel implements LstSimpsonContract.Model {
 
