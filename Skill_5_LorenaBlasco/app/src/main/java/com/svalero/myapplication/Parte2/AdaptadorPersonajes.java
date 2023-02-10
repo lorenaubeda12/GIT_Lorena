@@ -1,0 +1,82 @@
+package com.svalero.myapplication.Parte2;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.svalero.myapplication.R;
+
+import java.util.ArrayList;
+
+public class AdaptadorPersonajes extends RecyclerView.Adapter<AdaptadorPersonajes.ViewHolderPersonajes>
+        implements View.OnClickListener{
+
+    ArrayList<PersonajeVo> listaPersonajes;
+    private View.OnClickListener listener;
+
+    public AdaptadorPersonajes(ArrayList<PersonajeVo> listaPersonajes) {
+        this.listaPersonajes = listaPersonajes;
+    }
+
+    @Override
+    public ViewHolderPersonajes onCreateViewHolder(ViewGroup parent, int viewType) {
+        int layout=0;
+        if (Utilidades.visualizacion==Utilidades.LIST){
+            layout= R.layout.personajes;
+        }else {
+            layout=R.layout.personajes2;
+        }
+
+        View view= LayoutInflater.from(parent.getContext()).inflate(layout,null,false);
+
+        view.setOnClickListener(this);
+
+        return new ViewHolderPersonajes(view);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolderPersonajes holder, int position) {
+        holder.etiNombre.setText(listaPersonajes.get(position).getNombre());
+
+        if (Utilidades.visualizacion==Utilidades.LIST){
+            holder.etiInformacion.setText(listaPersonajes.get(position).getInfo());
+        }
+
+        holder.foto.setImageResource(listaPersonajes.get(position).getFoto());
+    }
+
+    @Override
+    public int getItemCount() {
+        return listaPersonajes.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener=listener;
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (listener!=null){
+            listener.onClick(view);
+        }
+    }
+
+    public class ViewHolderPersonajes extends RecyclerView.ViewHolder {
+
+        TextView etiNombre,etiInformacion;
+        ImageView foto;
+
+        public ViewHolderPersonajes(View itemView) {
+            super(itemView);
+            etiNombre= (TextView) itemView.findViewById(R.id.idNombre);
+            if (Utilidades.visualizacion==Utilidades.LIST){
+                etiInformacion= (TextView) itemView.findViewById(R.id.idInfo);
+            }
+            foto= (ImageView) itemView.findViewById(R.id.idImagen);
+        }
+    }
+}
