@@ -1,82 +1,56 @@
 package com.svalero.myapplication.Parte2;
 
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.svalero.myapplication.R;
 
 import java.util.ArrayList;
 
-public class AdaptadorPersonajes extends RecyclerView.Adapter<AdaptadorPersonajes.ViewHolderPersonajes>
-        implements View.OnClickListener{
+public class AdaptadorPersonajes extends RecyclerView.Adapter<AdaptadorPersonajes.ViewHolderPersonajes> {
+    ArrayList<PersonajeVo> listadoPersonajes;
 
-    ArrayList<PersonajeVo> listaPersonajes;
-    private View.OnClickListener listener;
-
-    public AdaptadorPersonajes(ArrayList<PersonajeVo> listaPersonajes) {
-        this.listaPersonajes = listaPersonajes;
+    public AdaptadorPersonajes(ArrayList<PersonajeVo> listadoPersonajes) {
+        this.listadoPersonajes = listadoPersonajes;
     }
 
     @Override
     public ViewHolderPersonajes onCreateViewHolder(ViewGroup parent, int viewType) {
-        int layout=0;
-        if (Utilidades.visualizacion==Utilidades.LIST){
-            layout= R.layout.personajes;
-        }else {
-            layout=R.layout.personajes2;
-        }
-
-        View view= LayoutInflater.from(parent.getContext()).inflate(layout,null,false);
-
-        view.setOnClickListener(this);
-
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, null, false);
         return new ViewHolderPersonajes(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolderPersonajes holder, int position) {
-        holder.etiNombre.setText(listaPersonajes.get(position).getNombre());
-
-        if (Utilidades.visualizacion==Utilidades.LIST){
-            holder.etiInformacion.setText(listaPersonajes.get(position).getInfo());
-        }
-
-        holder.foto.setImageResource(listaPersonajes.get(position).getFoto());
+        holder.etiNombre.setText(listadoPersonajes.get(position).getNombre());
+        holder.etiDescripcion.setText(listadoPersonajes.get(position).getInfo());
+        holder.foto.setImageResource(listadoPersonajes.get(position).getFoto());
     }
 
     @Override
     public int getItemCount() {
-        return listaPersonajes.size();
+        return listadoPersonajes.size();
     }
 
-    public void setOnClickListener(View.OnClickListener listener){
-        this.listener=listener;
-    }
-
-    @Override
-    public void onClick(View view) {
-        if (listener!=null){
-            listener.onClick(view);
-        }
-    }
 
     public class ViewHolderPersonajes extends RecyclerView.ViewHolder {
-
-        TextView etiNombre,etiInformacion;
+        TextView etiNombre, etiDescripcion;
         ImageView foto;
 
         public ViewHolderPersonajes(View itemView) {
             super(itemView);
-            etiNombre= (TextView) itemView.findViewById(R.id.idNombre);
-            if (Utilidades.visualizacion==Utilidades.LIST){
-                etiInformacion= (TextView) itemView.findViewById(R.id.idInfo);
-            }
-            foto= (ImageView) itemView.findViewById(R.id.idImagen);
+           etiNombre = (TextView) itemView.findViewById(R.id.idNombre);
+              etiDescripcion = (TextView) itemView.findViewById(R.id.idInfo);
+            foto = (ImageView) itemView.findViewById(R.id.idImagen);
         }
+
+
     }
 }
