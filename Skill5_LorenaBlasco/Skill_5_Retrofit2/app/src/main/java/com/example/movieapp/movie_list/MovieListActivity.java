@@ -9,12 +9,9 @@ package com.example.movieapp.movie_list;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -30,6 +27,7 @@ import com.example.movieapp.model.Movie;
 import com.example.movieapp.movie_details.MovieDetailsActivity;
 import com.example.movieapp.movie_filter.MovieFilterActivity;
 import com.example.movieapp.utils.GridSpacingItemDecoration;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import static com.example.movieapp.utils.Constants.ACTION_MOVIE_FILTER;
@@ -37,6 +35,11 @@ import static com.example.movieapp.utils.Constants.KEY_MOVIE_ID;
 import static com.example.movieapp.utils.Constants.KEY_RELEASE_FROM;
 import static com.example.movieapp.utils.Constants.KEY_RELEASE_TO;
 import static com.example.movieapp.utils.GridSpacingItemDecoration.dpToPx;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MovieListActivity extends AppCompatActivity implements MovieListContract.View, MovieItemClickListener,
         ShowEmptyView {

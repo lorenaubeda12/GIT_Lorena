@@ -9,26 +9,14 @@ package com.example.movieapp.movie_details;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.DataSource;
-import com.bumptech.glide.load.engine.GlideException;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.request.target.Target;
-
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,8 +25,18 @@ import com.example.movieapp.adapter.CastAdapter;
 import com.example.movieapp.model.Cast;
 import com.example.movieapp.model.Movie;
 import com.example.movieapp.network.ApiClient;
+import com.google.android.gms.fido.fido2.api.common.RequestOptions;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.snackbar.Snackbar;
 
 import static com.example.movieapp.utils.Constants.KEY_MOVIE_ID;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import javax.sql.DataSource;
 
 public class MovieDetailsActivity extends AppCompatActivity implements MovieDetailsContract.View {
 

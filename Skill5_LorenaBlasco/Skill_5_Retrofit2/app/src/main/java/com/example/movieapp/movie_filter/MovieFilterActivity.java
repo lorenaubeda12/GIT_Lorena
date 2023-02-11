@@ -8,9 +8,8 @@
 package com.example.movieapp.movie_filter;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -20,7 +19,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Calendar;
 
@@ -28,6 +27,8 @@ import com.example.movieapp.R;
 
 import static com.example.movieapp.utils.Constants.KEY_RELEASE_FROM;
 import static com.example.movieapp.utils.Constants.KEY_RELEASE_TO;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MovieFilterActivity extends AppCompatActivity {
 
@@ -84,8 +85,7 @@ public class MovieFilterActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Calendar now = Calendar.getInstance();
-                DatePickerDialog dpd = DatePickerDialog.newInstance(
-                        new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog dpd = DatePickerDialog.newInstance(  new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
 
@@ -196,7 +196,7 @@ public class MovieFilterActivity extends AppCompatActivity {
         }
     }
 
-    @Override
+
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
